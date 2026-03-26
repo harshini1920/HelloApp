@@ -3,21 +3,20 @@ public class HelloApp {
 
     public static void main(String[] args) {
 
-        // UC5
+        // UC6
         if (args.length == 0) {
             System.out.println("Hello, World!");
         } else {
 
-            // Use StringBuilder for building names
-            StringBuilder names = new StringBuilder();
+            String names = "";
 
-            // Enhanced for loop
-            for (String name : args) {
-                if (names.length() > 0) {
-                    names.append(", ");
-                }
-                names.append(name);
+            // Append all names with comma
+            for (int i = 0; i < args.length; i++) {
+                names += args[i] + ", ";
             }
+
+            // Remove last ", " using substring
+            names = names.substring(0, names.length() - 2);
 
             System.out.println("Hello, " + names + "!");
         }
